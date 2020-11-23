@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>外部API呼び出し結果ページ</title>
+</head>
+<body>
+
+    <a href="./home">ホームページへ</a>
+    <a href="./apiListUp">外部API一覧ページへ</a>
+    <p><%= name %></p>
+    <p><%= url %></p>
+    <p><%= description %></p>
+
+    <p>Result</p>
+    <p><a href="/<%= downloadFullPathFileName %>" download="<%= downloadFileName %>"><%= downloadFileName %></a></p>
+    <div>
+        <pre><%= apiCallResult %></pre>
+    </div>
+
+</body>
+</html>

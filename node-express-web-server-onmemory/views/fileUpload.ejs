@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>アップロードページ</title>
+</head>
+<body>
+    <a href="./home">ホームページへ</a>
+
+    <form method="post" enctype="multipart/form-data" action="/execFileUpload">
+        <div>
+            <span>
+                Select Upload File
+            </span>
+            <input type="file" name="file"/>
+        </div>
+        <button type="submit">
+            <span>Upload</span>
+        </button>
+    </form>
+</body>
+</html>

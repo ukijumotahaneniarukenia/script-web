@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Official Joke API",
+    "url": "https://official-joke-api.appspot.com/random_joke",
+    "description": "ランダムなジョークを返してくれるAPI"
+  },
+  {
+    "name": "chucknorris.io",
+    "url": "https://api.chucknorris.io/jokes/random",
+    "description": "チャック・ノリスというアメリカの俳優を讃えるジョーク、チャック・ノリス・ファクト（チャック・ノリスの真実）をランダムに教えてくれるAPI"
+  },
+  {
+    "name": "Advice Slip JSON API",
+    "url": "https://api.adviceslip.com/advice",
+    "description": "いい感じのアドバイスをくれるAPI"
+  }
+]

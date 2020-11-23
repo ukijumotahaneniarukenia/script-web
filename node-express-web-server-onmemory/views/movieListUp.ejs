@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ムービー一覧ページ</title>
+</head>
+
+<body>
+
+    <a href="./home">ホームページへ</a>
+
+    <p><%= message %></p>
+    <div id="movie-container" className="movies"></div>
+    <script>
+
+        const movieContainer = document.querySelector('#movie-container');// id="movie-container"要素を取得する
+        movieContainer.innerHTML = '';// コンテナ内のDOMを初期化
+
+        let fetchCnt = 25;
+        // APIからJSONを取得する
+        for (let num = 1; num <= fetchCnt; num++) {
+            fetch(`https://my-json-server.typicode.com/kotlin-hands-on/kotlinconf-json/videos/${num}`)
+                .then((response) => response.json())
+                .then((item) => {
+
+                    const entryDom = document.createElement('div'); // エントリ
+                    const titleDom = document.createElement('h2'); // タイトル
+                    const speakerDom = document.createElement('h3'); // スピーカー
+                    const videoDom = document.createElement('iframe'); // ビデオURL
+                    const entryIdDom = document.createElement('input'); // エントリID
+
+                    entryDom.setAttribute("className","movie");
+
+                    const titleName = new Text(item.title);   // タイトル名
+                    const speakerName = new Text(item.speaker);   // スピーカー名
+                    const videoUrlName = new Text(item.videoUrl);   // ビデオURL名
+                    const entryIdName = new Text(item.id);   // エントリID名
+
+                    let videoEmbedUrl = videoUrlName.data.replace(/\/watch\?v=/,"/embed/");
+
+                    videoDom.setAttribute("className","video-container");
+                    videoDom.setAttribute("src",videoEmbedUrl);
+                    videoDom.setAttribute("frameborder","0");
+                    videoDom.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+                    videoDom.setAttribute("comutedntrols","");
+                    videoDom.setAttribute("allowfullscreen","");
+
+                    entryIdDom.setAttribute("type","hidden");
+                    entryIdDom.setAttribute("name","id");
+                    entryIdDom.setAttribute("value",entryIdName.data);
+
+                    // DOMの子要素にテキストを追加する
+                    titleDom.appendChild(titleName);
+                    speakerDom.appendChild(speakerName);
+                    // エントリに各DOM要素を追加する
+                    entryDom.appendChild(titleDom);
+                    entryDom.appendChild(speakerDom);
+                    entryDom.appendChild(videoDom);
+                    entryDom.appendChild(entryIdDom);
+                    //コンテナにエントリを追加する
+                    movieContainer.appendChild(entryDom)
+                })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>ダウンロードページ</title>
+</head>
+<body>
+
+    <a href="./home">ホームページへ</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>ファイル名</td>
+                <td>最終更新日</td>
+                <td>最終更新時</td>
+                <td>ファイルサイズ</td>
+                <td>ダウンロード</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% let ary = items; %>
+            <% ary.forEach(function (item, idx) { %>
+                <tr>
+                    <td><%= item.fileName %></td>
+                    <td><%= item.lastUpdateDate %></td>
+                    <td><%= item.lastUpdateTime %></td>
+                    <td><%= item.fileSize %></td>
+                    <td><a href="/<%= item.fullPathFileName %>" download="<%= item.fileName %>"><%= item.fileName %></a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+</body>
+</html>

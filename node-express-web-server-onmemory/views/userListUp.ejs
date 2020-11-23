@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>一覧ページ</title>
+</head>
+<body>
+
+    <a href="./home">ホームページへ</a>
+
+    <p><%= message %></p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>role</td>
+            </tr>
+        </thead>
+        <tbody>
+            <% let ary = items; %>
+            <% ary.forEach(function (item, idx) { %>
+                <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.role %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+</body>
+</html>

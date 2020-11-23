@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>削除ページ</title>
+</head>
+<body>
+
+    <a href="./home">ホームページへ</a>
+
+    <p><%= message %></p>
+
+    <form method="post" action="/execUserDelete">
+        <button type="submit"><span>Delete</span></button>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>check</td>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>role</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% let ary = items; %>
+                <% ary.forEach(function (item, idx) { %>
+                    <tr>
+                        <td><input type="checkbox" class="checkbox-grp" name="id" value="<%= item.id %>"/></td>
+                        <td><%= item.id %></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.role %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
