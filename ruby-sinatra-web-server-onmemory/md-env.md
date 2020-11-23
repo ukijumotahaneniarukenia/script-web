@@ -9,8 +9,6 @@ $ gem --version
 3.1.2
 
 
-$ sudo gem install bundler
-
 $ sudo gem install sinatra
 
 $ sudo gem install solargraph
