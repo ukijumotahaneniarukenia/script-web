@@ -506,3 +506,11 @@ Commercial support is available at
 </html>
 * Connection #0 to host just.another.unko.com left intact
 ```
+
+ブラウザ側で作成した証明書をインポートする
+
+- https://kekaku.addisteria.com/wp/20190327053337
+
+インポート後、ブラウザ再起動してアクセス
+
+- https://just.another.unko.com/
