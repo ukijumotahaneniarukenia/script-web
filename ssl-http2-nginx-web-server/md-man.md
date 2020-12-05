@@ -514,3 +514,8 @@ Commercial support is available at
 インポート後、ブラウザ再起動してアクセス
 
 - https://just.another.unko.com/
+
+CHROMEで参照する際は
+以下の設定をdisableからenableに変更するといい感じになる
+
+- chrome://flags/#allow-insecure-localhost
